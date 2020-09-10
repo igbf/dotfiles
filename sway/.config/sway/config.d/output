@@ -1,0 +1,16 @@
+# Output configuration
+# Use a dual-monitor setup at home,
+# with the right-most monitor in portrait mode.
+output 'Ancor Communications Inc ASUS PB278 E3LMTF117784' {
+	resolution 2560x1440
+	position 0,560
+	background ~/img/wall/Our Dream.jpg fill
+}
+
+output 'Ancor Communications Inc ASUS PB278 E3LMTF117782' {
+	resolution 2560x1440
+	transform 270
+	position 2560,0
+	background ~/img/wall/Reach.jpg fill
+}
+

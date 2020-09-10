@@ -1,0 +1,15 @@
+#! /bin/sh
+
+
+set -a
+[ -f $HOME/.config/sway/env ] && . "$HOME/.config/sway/env"
+
+XDG_SESSION_TYPE=wayland
+if [ -z $XDG_RUNTIME_DIR ]
+then
+	XDG_RUNTIME_DIR=/tmp
+fi
+set +a
+
+eval $(ssh-agent)
+exec /usr/bin/sway

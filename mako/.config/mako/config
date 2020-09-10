@@ -1,0 +1,6 @@
+max-visible=5
+default-timeout=5000
+
+font=Roboto 11
+icon-path=/usr/share/icons/Papirus-Dark
+max-icon-size=24

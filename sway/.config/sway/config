@@ -1,0 +1,61 @@
+# Sway config
+# See also $XDG_CONFIG_HOME/sway/config.d/* and $XDG_CONFIG_HOME/sway/env
+# Read `man 5 sway` for a complete reference.
+#
+# TODO: Move/focus stuff between outputs
+# TODO: x number of workspaces per output ala BSPWM?
+# 	Assign workspace to output
+# 	Focus/Move to nth workspace on output
+
+# Variables
+set $font_family Operator
+set $font_size 11
+font pango:$font_family $font_size
+
+set $term alacritty
+
+default_orientation auto
+focus_follows_mouse no
+mouse_warping output
+
+
+# Idle configuration
+exec_always pkill swayidle; exec swayidle -w \
+         timeout 300 'swaylock' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock --fade-in=0 --grace=0'
+
+### Key bindings
+
+#    floating_modifier mod4 normal
+
+
+# Status Bar:
+bar {
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command while date +'%H:%M'; do sleep 1; done
+#
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #323232ff #323232ff #5c5c5c
+#    }
+#    tray_output *
+#    icon_theme Papirus-Dark
+
+	# Use waybar for a working system tray (right click was not working for me in swaybar)
+	swaybar_command waybar
+}
+
+
+# Make Firefox's PiP floating and sticky, without a border
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, border none
+
+# Include other files
+include $XDG_CONFIG_HOME/sway/config.d/*
+include /etc/sway/config.d/*
+
+exec systemd-notify --ready || true
