@@ -1,0 +1,168 @@
+font:
+        size: 12
+        normal:
+                family: VictorMono Nerd Font Mono # Does not look good at size 11
+                style: Regular
+
+# import:
+#       - /path/to/alacritty.yml
+
+schemes:
+        gruvbox_dark: &gruvbox_dark
+                # Gruvbox Dark
+                primary:
+                        background: '#282828'
+                        foreground: '#ebdbb2'
+
+                normal:
+                        black:   '#282828'
+                        red:     '#cc241d'
+                        green:   '#98971a'
+                        yellow:  '#d79921'
+                        blue:    '#458588'
+                        magenta: '#b16286'
+                        cyan:    '#689d6a'
+                        white:   '#a89984'
+                bright:
+                        black:   '#928374'
+                        red:     '#fb4934'
+                        green:   '#b8bb26'
+                        yellow:  '#fabd2f'
+                        blue:    '#83a598'
+                        magenta: '#d3869b'
+                        cyan:    '#8ec07c'
+                        white:   '#ebdbb2'
+        afterglow: &afterglow
+                primary:
+                        background:     '#2c2c2c'
+                        foreground:     '#d6d6d6'
+
+                        dim_foreground:	'#dbdbdb'
+                        bright_foreground:	'#d9d9d9'
+                        dim_background:	'#202020'
+                        bright_background:	'#3a3a3a'
+
+                #Cursorcolors
+                cursor:
+                        text:	'#2c2c2c'
+                        cursor:	'#d9d9d9'
+
+                #Normalcolors
+                normal:
+                        black:	'#1c1c1c'
+                        red:	'#bc5653'
+                        green:	'#909d63'
+                        yellow:	'#ebc17a'
+                        blue:	'#7eaac7'
+                        magenta:	'#aa6292'
+                        cyan:	'#86d3ce'
+                        white:	'#cacaca'
+
+                #Brightcolors
+                bright:
+                        black:	'#636363'
+                        red:	'#bc5653'
+                        green:	'#909d63'
+                        yellow:	'#ebc17a'
+                        blue:	'#7eaac7'
+                        magenta:	'#aa6292'
+                        cyan:	'#86d3ce'
+                        white:	'#f7f7f7'
+
+                #Dimcolors
+                dim:
+                        black:	'#232323'
+                        red:	'#74423f'
+                        green:	'#5e6547'
+                        yellow:	'#8b7653'
+                        blue:	'#556b79'
+                        magenta:	'#6e4962'
+                        cyan:	'#5c8482'
+                        white:	'#828282'
+
+                ayu_mirage: &ayu_mirage
+                        #Defaultcolors
+                        primary:
+                                background:	'#202734'
+                                foreground:	'#CBCCC6'
+
+                        #Normalcolors
+                        normal:
+                                black:	'#191E2A'
+                                red:	'#FF3333'
+                                green:	'#BAE67E'
+                                yellow:	'#FFA759'
+                                blue:	'#73D0FF'
+                                magenta:	'#FFD580'
+                                cyan:	'#95E6CB'
+                                white:	'#C7C7C7'
+
+                        #Brightcolors
+                        bright:
+                                black:	'#686868'
+                                red:	'#F27983'
+                                green:	'#A6CC70'
+                                yellow:	'#FFCC66'
+                                blue:	'#5CCFE6'
+                                magenta:	'#FFEE99'
+                                cyan:	'#95E6CB'
+                                white:	'#FFFFFF'
+
+colors: *afterglow
+
+cursor:
+        vi_mode_style:  Block
+
+key_bindings:
+        - {key: Space,  mods: Shift|Control,                    action: ToggleViMode }
+        - {key: Escape,                         mode: Vi,       action: ClearSelection }
+        - {key: Escape,                         mode: Vi,       action: ToggleViMode }
+        - {key: LBracket,      mods: Control,          mode: Vi,       action: ClearSelection }
+        - {key: LBracket,      mods: Control,          mode: Vi,       action: ToggleViMode }
+        - {key: L,      mods: Control,          mode: Vi,       action: ClearLogNotice }
+        - {key: I,                              mode: Vi,       action: ScrollToBottom }
+        - {key: I,                              mode: Vi,       action: ToggleViMode }
+        - {key: G,                              mode: Vi,       action: ScrollToTop }
+        - {key: G,      mods: Shift,            mode: Vi,       action: ScrollToBottom }
+        - {key: Y,      mods: Control,          mode: Vi,       action: ScrollLineUp }
+        - {key: E,      mods: Control,          mode: Vi,       action: ScrollLineDown }
+        - {key: U,      mods: Control,          mode: Vi,       action: ScrollHalfPageUp }
+        - {key: D,      mods: Control,          mode: Vi,       action: ScrollHalfPageDown }
+        - {key: B,      mods: Control,          mode: Vi,       action: ScrollPageUp }
+        - {key: F,      mods: Control,          mode: Vi,       action: ScrollPageDown }
+        - {key: Y,                              mode: Vi,       action: Copy }
+        - {key: Y,                              mode: Vi,       action: ClearSelection }
+        - {key: V,                              mode: Vi,       action: ToggleNormalSelection }
+        - {key: V,      mods: Shift,            mode: Vi,       action: ToggleLineSelection }
+        - {key: V,      mods: Control,          mode: Vi,       action: ToggleBlockSelection }
+        - {key: V,      mods: Alt,              mode: Vi,       action: ToggleSemanticSelection }
+        - {key: Return,                         mode: Vi,       action: Open }
+        - {key: H,                              mode: Vi,       action: Left }
+        - {key: J,                              mode: Vi,       action: Down }
+        - {key: K,                              mode: Vi,       action: Up }
+        - {key: L,                              mode: Vi,       action: Right }
+        - {key: Key0,   mods: Shift,            mode: Vi,       action: First }
+        - {key: Key4,   mods: Shift,            mode: Vi,       action: Last }
+        - {key: Key5,   mods: Shift,            mode: Vi,       action: Bracket }
+        - {key: Key6,   mods: Shift,            mode: Vi,       action: FirstOccupied }
+        - {key: H,      mods: Shift,            mode: Vi,       action: High }
+        - {key: M,      mods: Shift,            mode: Vi,       action: Middle }
+        - {key: L,      mods: Shift,            mode: Vi,       action: Low }
+        - {key: B,                              mode: Vi,       action: SemanticLeft }
+        - {key: W,                              mode: Vi,       action: SemanticRight }
+        - {key: E,                              mode: Vi,       action: SemanticRightEnd }
+        - {key: B,      mods: Shift,            mode: Vi,       action: WordLeft }
+        - {key: W,      mods: Shift,            mode: Vi,       action: WordRight }
+        - {key: E,      mods: Shift,            mode: Vi,       action: WordRightEnd }
+        - {key: Slash,                          mode: Vi,       action: SearchForward }
+        - {key: Slash,  mods: Shift,            mode: Vi,       action: SearchBackward }
+        - {key: N,                              mode: Vi,       action: SearchNext }
+        - {key: N,      mods: Shift,            mode: Vi,       action: SearchPrevious }
+        - {key: V,      mods: Control|Shift,                    action: Paste }
+        - {key: C,      mods: Control|Shift,                    action: Copy }
+        - {key: Insert, mods: Shift,                            action: PasteSelection }
+        - {key: Key0,   mods: Control,                          action: ResetFontSize }
+        - {key: Equals, mods: Control,                          action: IncreaseFontSize }
+        - {key: Add,    mods: Control,                          action: IncreaseFontSize }
+        - {key: Minus,  mods: Control,                          action: DecreaseFontSize }
+        - {key: Subtract,       mods: Control,                  action: DecreaseFontSize }
