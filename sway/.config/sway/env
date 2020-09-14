@@ -1,5 +1,5 @@
 # Fix Java issues, so I can actually see the window
-_JAVA_AWT_REPARENTING=1
+_JAVA_AWT_WM_NONREPARENTING=1
 
 # Enable wayland backend for Firefox
 MOZ_ENABLE_WAYLAND=1

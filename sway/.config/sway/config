@@ -20,14 +20,14 @@ mouse_warping output
 
 
 # Idle configuration
-exec_always pkill swayidle; exec swayidle -w \
+exec swayidle -w \
          timeout 300 'swaylock' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock --fade-in=0 --grace=0'
 
 ### Key bindings
 
-#    floating_modifier mod4 normal
+    floating_modifier mod4 normal
 
 
 # Status Bar:
@@ -53,6 +53,9 @@ bar {
 
 # Make Firefox's PiP floating and sticky, without a border
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, border none
+
+for_window [class="^MATLAB*" title="^Figure [0-9].*"] floating enable
+for_window [title="Meeting \| Microsoft Teams" ] inhibit_idle visible
 
 # Include other files
 include $XDG_CONFIG_HOME/sway/config.d/*
