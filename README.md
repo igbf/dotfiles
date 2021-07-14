@@ -15,4 +15,6 @@ To get started quickly run
 - jq
 - foot
 - kitty
+- xdg-utils
+- xdg-user-dirs
 
