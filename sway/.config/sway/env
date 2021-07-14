@@ -1,8 +1,0 @@
-# Fix Java issues, so I can actually see the window
-_JAVA_AWT_WM_NONREPARENTING=1
-
-# Enable wayland backend for Firefox
-MOZ_ENABLE_WAYLAND=1
-
-# Use qt5ct as QT theme
-QT_QPA_PLATFORMTHEME=qt5ct

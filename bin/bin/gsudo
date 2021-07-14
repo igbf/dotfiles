@@ -1,6 +1,0 @@
-#! /bin/sh
-#
-# Run Graphical Applications with Root permissions
-xhost si:localuser:root >/dev/null
-sudo --set-home "$@"
-xhost -si:localuser:root >/dev/null
