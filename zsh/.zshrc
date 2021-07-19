@@ -207,7 +207,7 @@ zle -N fzf_history
 bindkey '^R' fzf_history
 
 function fzf_select_file() {
-	local cmd="${FZF_SELECT_FILES_CMD:-"rg --files --hidden --follow --null 2>/dev/null"}"
+	local cmd="${FZF_SELECT_FILES_CMD:-"rg --files --hidden --follow 2>/dev/null"}"
 	local file="$(eval "${cmd}" | FZF_DEFAULT_OPTS="--height ${FZF_HEIGHT:-40%} --tac --bind=ctrl-z:ignore ${FZF_DEFAULT_OPTS} --multi" fzf ${FZF_SELECT_FILES_OPTS})"
 	local ret=$?
 	LBUFFER="${LBUFFER}${file}"

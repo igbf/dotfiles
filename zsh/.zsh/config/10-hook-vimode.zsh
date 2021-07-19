@@ -6,10 +6,10 @@ function _vi-mode-set_indicator() {
 	local _shape=0
 	printf $'\e[%d q'
 	case ${1:-${KEYMAP}} in
-		main) _shape=${cursorshapes[beam]};;
-		viins) _shape=${cursorshapes[beam]};;
-		isearch) _shape=${cursorshapes[beam]};;
-		command) _shape=${cursorshapes[beam]};;
+		main) _shape=${cursorshapes[blinkbeam]};;
+		viins) _shape=${cursorshapes[blinkbeam]};;
+		isearch) _shape=${cursorshapes[blinkbeam]};;
+		command) _shape=${cursorshapes[blinkbeam]};;
 		vicmd) _shape=${cursorshapes[block]};;
 		visual) _shape=${cursorshapes[block]};;
 		viopp) _shape=${cursorshapes[blinkblock]};;
