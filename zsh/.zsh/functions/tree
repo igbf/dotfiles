@@ -1,0 +1,6 @@
+#! /usr/bin/env zsh
+
+# View a file tree
+function tree() {
+	command -v exa >/dev/null && exa --icons --tree "$@" || command tree "$@"
+}

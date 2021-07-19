@@ -1,0 +1,6 @@
+#! /usr/bin/env zsh
+
+# Open a file and disown
+function open() {
+	xdg-open "$@" &!
+}

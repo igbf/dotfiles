@@ -1,0 +1,6 @@
+#! /usr/bin/env zsh
+
+# View a file on the command line
+function view() {
+	command -v bat >/dev/null && bat "$@" || cat "$@"
+}

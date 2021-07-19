@@ -1,0 +1,5 @@
+#! /usr/bin/env zsh
+
+function ls() {
+	command -v exa >/dev/null && exa --icons --classify --git "$@" || command ls "$@"
+}
