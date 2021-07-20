@@ -218,8 +218,8 @@ zle -N fzf_select_file
 bindkey '^T' fzf_select_file
 
 function fzf_cd() {
-	local cmd="${FZF_CD_CMD:-"rg --files --hidden --follow --null 2>/dev/null | xargs -0 dirname | uniq"}"
-	local dir="$(eval "${cmd}" | FZF_DEFAULT_OPTS="--height ${FZF_HEIGHT:-40%} --reverse --bind=ctrl-z:ignore ${FZF_DEFAULT_OPTS}" fzf ${FZF_CD_OPTS} --no-multi)"
+	local cmd="${FZF_CD_CMD:-"fd --type=directory --follow --hidden"}"
+	local dir="$(eval "${cmd}" | FZF_DEFAULT_OPTS="--height ${FZF_HEIGHT:-40%} --tac --bind=ctrl-z:ignore ${FZF_DEFAULT_OPTS}" fzf ${FZF_CD_OPTS} --no-multi)"
 	if [[ -z "${dir}" ]]
 	then
 		zle redisplay
